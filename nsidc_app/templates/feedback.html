@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} |  Feedback Form  {% endblock %}
+{% block content %}
+{% load static %}
+
+<style>
+ p img
+{
+  widt0h:80%;
+  max-width:100%;
+  height:auto;
+}
+h1
+{
+  font-weight: 900;
+  color:#2980b9;
+
+}
+
+</style>
+<section
+    class="vh-700 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+        <  <a href="/" class="tenh">Home</a> > feedback form
+            <h1 style="font-weight: 900">
+            Feedback Form
+            </h1>
+            <br>
+            <br>
+        <form action="{% url 'feedback_example' %}" method="POST">
+            {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Please Enter the Feedback About NCPOR</label>
+            <textarea class="form-control" id="feedback" name="feedback" placeholder="Write something.." rows="3"></textarea>
+            <div id="emailHelp" class="form-text">We'll try to incorporate your feedbacks as soon as possible</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+
+    </div>
+</section>
+
+  {% endblock %}

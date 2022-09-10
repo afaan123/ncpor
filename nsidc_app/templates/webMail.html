@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} | Home {% endblock %}
+{% block content %}
+{% load static %}
+
+                <div class="pg" >
+                    <div style="background-color: white; height:500px;padding:20px;">
+                        <div class="inside">
+                            <div class="ins">
+                                <a href="/" class="tenh">Home</a> > Webmail
+                                <div>
+                                    <h2 style="color:darkblue;">Webmail</h2>
+                                    <hr>
+                                    <table>
+                                        <tr>
+                                          <th style="border: 1px grey;">Description</th>
+                                          <th>Link</th>
+                                        </tr>
+
+                                        {% for sln in web %}
+                                            <tr>
+
+                                                <td>{{sln.description}} </td>
+                                                <td><a href="{{sln.link}}">{{sln.link}}</a></td>
+                                            </tr>
+                                            {% endfor %}
+                                     </table>
+                                  <!--  <a href="careerArchive" class="tenh"><h4>Archive</h4></a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endblock %}

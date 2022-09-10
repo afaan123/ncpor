@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} | Rit {% endblock %}
+{% block content %}
+{% load static %}
+<style>
+  h1
+  {
+    font-weight: 900;
+    color:#2980b9;
+
+  }
+</style>
+<section
+    class="vh-500 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+      <a href="/" class="tenh">Home</a> > RTI
+        <h1>
+          Right To Information
+        </h1>
+        <br>
+        <br>
+        <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sln in re %}
+                <tr>
+                    <th scope="row">{{sln.sl_No}}</th>
+                    <td>{{sln.title}} </td>
+                    <td><a href="{{sln.download}}" target="_blank">{{sln.download}}</a> </td>
+
+                </tr>
+                  {% endfor %}
+            </tbody>
+        </table>
+          </div>
+    </div>
+
+</section>
+
+
+{% endblock %}

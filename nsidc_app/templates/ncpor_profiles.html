@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %} | Staff {% endblock %}
+{% block content %}
+{% load static %}
+<style>
+  h1
+  {
+    font-weight: 900;
+    color:#2980b9;
+
+  }
+
+</style>
+<section
+    class="vh-500 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+      <a href="/" class="tenh">Home</a> > <a href="/profiles" class="tenh">staff</a > >NCAOR Staff - {{sf.name}}
+        <h1>
+        NCAOR Staff - {{sf.name}}
+        </h1>
+
+
+        <br>
+        <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">{{sf.name}}</th>
+
+                </tr>
+                <tr>
+                    <th scope="col">Designation</th>
+                    <th scope="col">{{sf.designation}}</th>
+                    <th scope="col" rowspan="4"><img src="{{sf.photo.url}}"  style="margin-left:30px;width:10rem"></th>
+                </tr>
+                <tr>
+                    <th scope="col">Email-id</th>
+                    <th scope="col">{{sf.email_id}}</th>
+
+                </tr>
+                <tr>
+                    <th scope="col">Desk-No</th>
+                    <th scope="col">{{sf.desk_no}}</th>
+
+                </tr>
+                <tr>
+                    <th scope="col">Field Of Specilization</th>
+                    <th scope="col"> {{sf.field_of_specilization}}</th>
+                    <th scope="col"></th>
+                </tr>
+                <tr>
+                    <th scope="col">  Current Research Activitie</th>
+                    <th scope="col">  {{sf.current_research_activities}}</th>
+                    <th scope="col"></th>
+                </tr>
+                <tr>
+                    <th scope="col"> {{sf.content | safe}} </th>
+                </tr>
+            </thead>
+        </table>
+          </div>
+    </div>
+
+</section>
+
+
+{% endblock %}

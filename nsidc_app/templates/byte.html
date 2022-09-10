@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %} |  Byte {% endblock %}
+{% block content %}
+{% load static %}
+
+<style>
+ p img
+{
+  widt0h:80%;
+  max-width:100%;
+  height:auto;
+}
+h1
+{
+  font-weight: 900;
+  color:#2980b9;
+
+}
+</style>
+<section
+    class="vh-700 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+        <a href="/" class="tenh">Home</a> > Byte
+        <h1 style="font-weight: 900">
+          Byte
+        </h1>
+        <form action="{% url 'byte_example' %}" method="GET">
+          <label for="gallery" class="form-label">  To view the images</label>
+          <select  name="gallery" id="gallery" class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <option selected value="">ALL</option>
+            {% for byte in bi %}
+                    <option value="{{byte.title|safe}}">{{byte.title|safe}}</option>
+            {% endfor %}
+          </select>
+          <br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+
+        <div
+          class="cards mt-5 d-flex flex-wrap justify-content-center gap-4 align-items-center"
+        >
+          {% for byte in be %}
+          <div class="card" style="width: 25rem">
+            <img
+              src="{{byte.photo_1.url}}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+
+          <div class="card" style="width: 25rem">
+            <img
+              src="{{byte.photo_2.url}}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+
+          <div class="card" style="width: 25rem">
+            <img
+              src="{{byte.photo_3.url}}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+
+          <div class="card" style="width: 25rem">
+            <img
+              src="{{byte.photo_4.url}}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+
+          <div class="card" style="width: 25rem">
+            <img
+              src="{{byte.photo_5.url}}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+            {% endfor %}
+        </div>
+
+
+
+
+
+    </div>
+</section>
+
+  {% endblock %}

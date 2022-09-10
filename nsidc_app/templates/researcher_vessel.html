@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} |   {{ ifrsc.title }} {% endblock %}
+{% block content %}
+{% load static %}
+
+<style>
+ p img
+{
+  width:80%;
+  max-width:100%;
+  height:auto;
+}
+
+</style>
+<section
+    class="vh-700 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+        <h1 style="font-weight: 900">
+
+        </h1>
+        <p class="lead">
+          {% for vessel in ve %}
+                {{vessel.content|safe}}
+                {% endfor %}
+        </p>
+
+    </div>
+</section>
+
+  {% endblock %}

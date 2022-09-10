@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} | Home {% endblock %}
+{% block content %}
+{% load static %}
+
+            <div class="pg">
+
+                <div>
+                    {{d.content|safe}}
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}

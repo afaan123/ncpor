@@ -1,0 +1,24 @@
+.i1{
+    height: 200px;
+    background-color: pink;
+    display: flex;
+}
+.dd1 img{
+    height: 90px;
+    width: 80px;
+}
+.dd2{
+    background-color: aqua;
+    margin-left: 10px;
+    height: 100px;
+}
+.d1{
+    display: flex;
+}
+.d2{
+    margin-left: 90px;
+}
+.d2 img{
+    height: 40px;
+    width: 50px;
+}

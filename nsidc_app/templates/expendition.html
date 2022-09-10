@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} | Home {% endblock %}
+{% block content %}
+{% load static %}
+
+            <div class="pg">
+    {% for expendition in ex %}
+          {{expendition.content | safe}}
+
+    {% endfor %}
+
+
+            </div>
+            {% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} | Home {% endblock %}
+{% block content %}
+{% load static %}
+
+            <div class="pg">
+                <div style="background-color: white; height:500px">
+                    <div class="inside">
+                        <div class="ins">
+                            <a href="/" class="tenh">Home</a> > Data Center
+                            <div>
+                                <h2 style="color:darkblue;">Data Center</h2>
+                                <hr>
+                                <table>
+                                    <tr>
+                                      <th style="border: 1px grey;">SI.No.</th>
+                                      <th>Tender No</th>
+                                      <th>Description</th>
+                                      <th>Download</th>
+                                      <th>Release Date</th>
+                                      <th>Closing Date</th>
+                                    </tr>
+
+                                    {% for sln in co %}
+                                        <tr>
+                                            <td>{{sln.slno}}</td>
+                                            <td>{{sln.tenderno}} </td>
+                                            <td>{{sln.description}}</td>
+                                            <td><a href="{{sln.download}}" target="_blank">{{sln.downloadname}}</a> </td>
+                                            <td>{{sln.releasedate.date}}</td>
+                                            <td>{{sln.closingdate}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                 </table>
+                                <a href="careerArchive" class="tenh"><h4>Archive</h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}

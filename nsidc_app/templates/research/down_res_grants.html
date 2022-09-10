@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} | Home {% endblock %}
+{% block content %}
+{% load static %}
+    <div>
+hello
+        {{grants.title}}
+
+        <p>
+            {{grants.content|safe}}
+        </p>
+    </div>
+                {% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} |   Tender {% endblock %}
+{% block content %}
+{% load static %}
+
+<style>
+ p img
+{
+  widt0h:80%;
+  max-width:100%;
+  height:auto;
+}
+
+  h1
+  {
+    font-weight: 900;
+    color:#2980b9;
+
+  }
+  a{
+  text-decoration: none;
+}
+</style>
+<section
+    class="vh-700 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+        <a href="/" class="tenh">Home</a> > Tender
+        <h1>
+          Tender
+        </h1>
+        <br>
+        <br>
+        <p class="lead">
+          <ul class="list-group list-group-flush">
+  <li class="list-group-item">  <a href="corrigendum"  class="tenh">&#8699; Corrigendum</a></li>
+  <li class="list-group-item"><a href="procurement" class="tenh">&#8699; E-Procurement</a></li>
+  <li class="list-group-item"><a href="empanelment" class="tenh">&#8699; Empanelment of Vendors</a></li>
+  <li class="list-group-item">  <a href="enquiry" class="tenh">&#8699; Enquiry</a></li>
+    <li class="list-group-item">   <a href="GeM" class="tenh">&#8699; GeM Tendors</a><br><br></li>
+
+</ul>
+        </p>
+
+  <a href="/tender/archive"><h5>Tender Archive</h5></a>
+    </div>
+</section>
+
+  {% endblock %}

@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta name="language" content="en-us">
+<meta name="keywords" content="NATIONAL CENTRE FOR POLAR AND OCEAN RESEARCH (NCPOR),GOA">
+<meta name="description" content="NATIONAL CENTRE FOR POLAR AND OCEAN RESEARCH">
+<meta name="author" content="">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<title>Home: NATIONAL CENTRE FOR POLAR AND OCEAN RESEARCH (NCPOR),GOA</title>
+
+
+<style>
+  body {
+      background-color: rgb(5, 23, 41);
+      min-height: 100vh;
+  }
+  a
+{
+  text-decoration: none;
+  color: darkblue;
+}
+  .hero {
+      background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0) 80%,
+              rgb(5, 23, 41)
+          ),
+          url("{% static 'images/main-img1.jpg' %}");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+  .hero__text {
+      max-width: 600px;
+      width: 50%;
+  }
+
+  .dropdown-menu li {
+  position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+.dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+  display: block;
+}
+  @media screen and (max-width: 600px) {
+      .hero__text {
+          max-width: 1000px;
+          width: 100%;
+      }
+  }
+  @media (max-width: 991px) {
+  .dropdown-menu .dropdown-submenu
+  {
+    display: none;
+        position: absolute;
+        left: 0%;
+        top: 30px;
+  }
+}
+</style>
+</head>
+<body>
+
+  {% include 'includes/navbar.html' %}
+
+
+  {% block content %}
+
+
+  {% endblock%}
+
+
+  {% include 'includes/footer.html' %}
+
+
+
+<script src="{% static 'js/bootstrap.js' %}" charset="utf-8"></script>
+</body>
+</html>

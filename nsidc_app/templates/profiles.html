@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %} | Staff {% endblock %}
+{% block content %}
+{% load static %}
+<style>
+  h1
+  {
+    font-weight: 900;
+    color:#2980b9;
+
+  }
+
+</style>
+<section
+    class="vh-500 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+      <a href="/" class="tenh">Home</a> >  Staff
+        <h1>
+          Staff
+        </h1>
+        <br>
+        <label for="site-search">Search the Staff By Alphabet:</label>
+                <a href="/profiles?keyword=A">A&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=B">B&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=C">C&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=D">D&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=E">E&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=F">F&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=G">G&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=H">H&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=I">I&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=J">J&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=K">K&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=L">L&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=M">M&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=N">N&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=O">O&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=P">P&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=Q">Q&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=R">R&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=S">S&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=T">T&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=U">U&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=V">V&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=W">W&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=X">X&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=Y">Y&nbsp&nbsp&nbsp</a>
+                <a href="/profiles?keyword=Z">Z&nbsp&nbsp&nbsp</a>
+
+
+
+
+        <form action="{% url 'profiles' %}" method="GET">
+          <div class="mb-3">
+            <br>
+            <label for="search" class="form-label">Search the Staff By Designation:</label>
+            <input type="search" class="form-control" id="site-search" placeholder="search...."  name="designation" aria-describedby="search">
+            <div id="emailHelp" class="form-text">search the profile</div>
+      </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <br>
+        <br>
+        <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Profile Photo</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Email-Id (@ncpor.res.in)</th>
+                    <th scope="col">Desk-No</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pf in prof %}
+                <tr>
+                    <td><img src="{{pf.photo.url}}"  style="margin-left:30px;width:50px"></td>
+                    <td> <a  href="{% url 'single_profile' pf.id %}"> {{pf.name}}</a> </td>
+                    <td><a href="{% url 'single_profile' pf.id %}">{{pf.designation}}</a></td>
+                    <td>{{pf.email_id}} </td>
+                    <td>{{pf.desk_no}}</td>
+
+                </tr>
+                  {% endfor %}
+            </tbody>
+        </table>
+          </div>
+    </div>
+
+</section>
+
+
+{% endblock %}

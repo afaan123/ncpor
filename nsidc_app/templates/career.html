@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %} | Career {% endblock %}
+{% block content %}
+{% load static %}
+<style>
+  h1
+  {
+    font-weight: 900;
+    color:#2980b9;
+
+  }
+</style>
+<section
+    class="vh-500 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+      <a href="/" class="tenh">Home</a> > Careers
+        <h1>
+          Careers
+        </h1>
+        <br><br>
+
+        <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tender No</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Download</th>
+                    <th scope="col">Release Date</th>
+                    <th scope="col">Closing Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sln in co %}
+                <tr>
+                    <th scope="row">{{sln.slno}}</th>
+                    <td>{{sln.tenderno}} </td>
+                    <td>{{sln.description}}</td>
+                    <td><a href="{{sln.download}}" target="_blank">{{sln.downloadname}}</a> </td>
+                    <td>{{sln.releasedate.date}}</td>
+                    <td>{{sln.closingdate}}</td>
+                </tr>
+                  {% endfor %}
+            </tbody>
+        </table>
+          </div>
+        <a href="careerArchive"><h5>Archive</h5></a>
+    </div>
+
+</section>
+
+
+{% endblock %}

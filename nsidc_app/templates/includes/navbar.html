@@ -1,0 +1,193 @@
+{% load static %}
+<section id="navbar" class="fixed-top">
+  <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+          <div class="d-flex align-items-center" href="#">
+              <a href="/" class="me-3 p-1">
+                  <img
+                      src="{% static 'images/icon.png' %}"
+                      alt="Logo"
+                      width="70"
+                      height="70"
+                      style="object-fit: contain"
+                      class="d-inline-block align-text-top"
+                  />
+              </a>
+              <div class="brand-text">
+                  <span style="font-size: 0.7rem"
+                      >राष्ट्रीय ध्रुवीय एवं समुद्री अनुसंधान
+                      केन्द्र</span
+                  >
+                  <h5 style="margin-bottom: 0">NCPOR</h5>
+                  <span style="font-size: 0.7rem"
+                      >Ministry of Earth Sciences, Government of
+                      India</span
+                  >
+              </div>
+          </div>
+          <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+          >
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+              class="collapse navbar-collapse"
+              id="navbarSupportedContent"
+          >
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a
+                          class="nav-link active"
+                          aria-current="page"
+                          href="/"
+                          >Home</a
+                      >
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                      >
+                          About
+                      </a>
+                      <ul class="dropdown-menu">
+                        {% for about in ab %}
+                          <li>
+                              <a class="dropdown-item" href="/about_example/{{about.slug}}"
+                                  >{{about.title}}</a
+                              >
+                          </li>
+                          {% endfor %}
+                          <li>
+                              <a class="dropdown-item" href="/profiles"
+                                  >NCPOR Staff</a
+                              >
+                          </li>
+                      </ul>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                      <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                      >
+                          Research
+                      </a>
+
+                       <ul aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+                         <li>
+                    <a class="dropdown-item" href="#">Polar Science and Cryosphere &raquo;</a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                        {% for research in polsc %}
+                      <li>
+                        <a class="dropdown-item" href="/polarscience/{{research.slug}}">{{research.title}}</a>
+                      </li>
+                        {% endfor %}
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Atmosphere, Ice and Climate &raquo;</a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                        {% for researchGrant in am %}
+                      <li>
+                        <a class="dropdown-item" href="/atmosphere/{{researchGrant.slug}}">{{researchGrant.title}}</a>
+                      </li>
+                      {% endfor %}
+
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Geosciences &raquo;</a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                        {% for scientificPublication in gsc %}
+                      <li>
+                        <a class="dropdown-item" href="/geoscience/{{scientificPublication.slug}}">{{scientificPublication.title}}</a>
+                      </li>
+                        {% endfor %}
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Polar Oceans / Oceanography &raquo;</a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                      {% for informationResearch in poloc %}
+                      <li>
+                        <a class="dropdown-item" href="/polaroceans/{{informationResearch.slug}}">{{informationResearch.title}}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Polar Environments, Atmosphere &raquo;</a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                      {% for scientificExpedition in polen %}
+                      <li>
+                        <a class="dropdown-item" href="/polarenv/{{scientificExpedition.slug}}">{{scientificExpedition.title}}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Exploration for Mineral Resources &raquo;</a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                    {% for mine in mre %}
+                      <li>
+                        <a class="dropdown-item" href="/mineral/{{mine.slug}}">{{mine.title}}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                </ul>
+
+
+
+
+
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="/careers">Career</a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="/tender">Tender</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="https://email.gov.in/">Webmail</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                      >
+                          Data Center
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                          <li>
+                              {% for about in data %}
+                              <a class="dropdown-item" href="{{about.link}}"
+                                  >{{about.description}}</a
+                              >
+                              {% endfor %}
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</section>

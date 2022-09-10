@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %} | Career Archive {% endblock %}
+{% block content %}
+{% load static %}
+<style>
+  h1
+  {
+    font-weight: 900;
+    color:#2980b9;
+
+  }
+</style>
+<section
+    class="vh-500 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+      <a href="/" class="tenh">Home</a> >  <a href="/careers" class="tenh">Career</a> >Career Archive
+        <h1>
+          Careers Archive
+        </h1>
+        <form action="{% url 'career' %}" method="GET">
+          <select  name="year" id="year1" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected value="">ALL</option>
+
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2020">2020</option>
+                      <option value="2019">2019</option>
+                      <option value="2018">2018</option>
+                      <option value="2017">2017</option>
+                      <option value="2016">2016</option>
+                      <option value="2015">2015</option>
+                      <option value="2014">2014</option>
+                      <option value="2013">2013</option>
+                      <option value="2012">2012</option>
+          </select>
+
+          <div class="mb-3">
+            <label for="search" class="form-label"></label>
+            <input type="search" class="form-control" id="site-search" placeholder="search...."  name="keyword" aria-describedby="search">
+            <div id="emailHelp" class="form-text">search the content</div>
+      </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+        <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tender No</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Download</th>
+                    <th scope="col">Release Date</th>
+                    <th scope="col">Closing Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sln in co %}
+                <tr>
+                    <th scope="row">{{sln.slno}}</th>
+                    <td>{{sln.tenderno}} </td>
+                    <td>{{sln.description}}</td>
+                    <td><a href="{{sln.download}}" target="_blank">{{sln.downloadname}}</a> </td>
+                    <td>{{sln.releasedate.date}}</td>
+                    <td>{{sln.closingdate}}</td>
+                </tr>
+                  {% endfor %}
+            </tbody>
+        </table>
+          </div>
+    </div>
+
+</section>
+
+
+{% endblock %}

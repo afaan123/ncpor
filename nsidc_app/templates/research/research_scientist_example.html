@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} |  Antarctica {% endblock %}
+{% block content %}
+{% load static %}
+
+<style>
+ p img
+{
+  width:80%;
+  max-width:100%;
+  height:auto;
+}
+h1,h2
+{
+  font-weight: 900;
+  color:#2980b9;
+
+}
+
+</style>
+<section
+    class="vh-700 p-4 bg-white m-5"
+    style="margin-top: 10rem !important"
+>
+    <div class="">
+        <a href="/" class="tenh">Home</a> > Antarctica
+        <p class="lead">
+          {{research.content|safe}}
+        </p>
+
+
+    </div>
+</section>
+
+  {% endblock %}

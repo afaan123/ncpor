@@ -1,0 +1,505 @@
+{% extends 'base.html' %}
+{% block title %} | Home {% endblock %}
+{% block content %}
+{% load static %}
+<section
+  class="
+      hero
+      d-flex
+      align-items-center
+      justify-items-center
+      vh-100
+      p-4
+  "
+  style="font-weight: 900"
+>
+  <div class="hero__text">
+      <h1 style="font-weight: 900">
+          Welcome to National Center for Polar and Ocean Research
+      </h1>
+      <p class="lead">
+          National Centre for Polar and Ocean Research (NCPOR) is
+          India’s premier R&D institution responsible for the
+          country’s research activities in the polar and Southern
+          Ocean realms.
+      </p>
+      <a href="/read">Read More</a>
+  </div>
+</section>
+
+<section class="min-h-screen container">
+  <h2 class="h1 text-white text-center my-5">Featured</h2>
+  <div class="featured">
+      <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="true"
+      >
+          <div class="carousel-indicators">
+              <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+              ></button>
+              <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+              ></button>
+              <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+              ></button>
+              <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+              ></button>
+          </div>
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img
+                      src="{% static 'images/10.png' %}"
+                      class="d-block w-100"
+                      alt="..."
+                  />
+              </div>
+              <div class="carousel-item">
+                  <img
+                      src="{% static 'images/11.jpg' %}"
+                      class="d-block w-100"
+                      alt="..."
+                  />
+              </div>
+              <div class="carousel-item">
+                  <img
+                      src="{% static 'images/12.jpg' %}"
+                      class="d-block w-100"
+                      alt="..."
+                  />
+              </div>
+              <div class="carousel-item">
+                  <img
+                      src="{% static 'images/13.png' %}"
+                      class="d-block w-100"
+                      alt="..."
+                  />
+              </div>
+          </div>
+          <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+          >
+              <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+          >
+              <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+  </div>
+
+  <h2 class="h1 text-white text-center mt-5">Our Research</h2>
+  <div
+      class="
+          cards
+          mt-5
+          d-flex
+          flex-wrap
+          justify-content-center
+          gap-4
+          align-items-center
+      "
+  >
+      <div class="card" style="width: 25rem">
+          <img
+              src="{% static 'images/asina.jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                      Polar Science and Cryosphere
+                  </button>
+                  <ul class="dropdown-menu">
+                      {% for polar in polsc %}
+                      <li>
+                          <a class="dropdown-item" href="polarscience/{{polar.slug}}">{{polar.title}}</a>
+                      </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+              <p class="card-text">
+Scientific analysis of Arctic sea ice conditions plus daily images
+              </p>
+
+          </div>
+      </div>
+
+      <div class="card" style="width: 25rem">
+          <img
+              src="{% static 'images/eloka-image(1).jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                    Atmosphere, Ice and Climate
+                  </button>
+                  <ul class="dropdown-menu">
+                    {% for a in am %}
+                      <li>
+                          <a class="dropdown-item" href="atmosphere/{{a.slug}}">{{a.title}}</a>
+                      </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+              <p class="card-text">
+                Working together to understand the changing Arctic system.
+              </p>
+          </div>
+      </div>
+
+      <div class="card" style="width: 25rem">
+          <img
+              src="{% static 'images/snow-today.jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                      Geosciences
+                  </button>
+                  <ul class="dropdown-menu">
+                      {% for gesc in gsc %}
+                      <li>
+                          <a class="dropdown-item" href="geoscience/{{gesc.slug}}">{{gesc.title}}</a>
+                      </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+              <p class="card-text">
+                Scientific analysis of snow conditions in the Western United States plus daily images
+              </p>
+          </div>
+      </div>
+
+      <div class="card" style="width: 25rem">
+          <img
+              src="{% static 'images/daac-image.jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                      Polar Oceans / Oceanography
+                  </button>
+                  <ul class="dropdown-menu">
+                      {% for polaroc in poloc %}
+                      <li>
+                          <a class="dropdown-item" href="polaroceans/{{polaroc.slug}}">{{polaroc.title}}</a>
+                      </li>
+                        {% endfor %}
+                  </ul>
+              </div>
+              <p class="card-text">
+                NASA Earth science data on snow, ice, cryosphere, and climate
+              </p>
+
+          </div>
+      </div>
+
+      <div class="card" style="width: 25rem">
+          <img
+              src="{% static 'images/cryosphere-image.jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                      Polar Environments, Atmosphere
+                  </button>
+                  <ul class="dropdown-menu">
+                      {% for polaren in polen %}
+                      <li>
+                          <a class="dropdown-item" href="polarenv/{{polaren.slug}}">{{polaren.title}}</a>
+                      </li>
+                        {% endfor %}
+                  </ul>
+              </div>
+              <p class="card-text">
+                Facts, photos and educational resources about Earth's frozen regions.
+              </p>
+
+          </div>
+      </div>
+
+      <div class="card" style="width: 25rem">
+          <img
+              src="{% static 'images/greenland-image.jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                    Exploration for Mineral Resources
+                  </button>
+                  <ul class="dropdown-menu">
+                      {% for mine in mre %}
+                      <li>
+                          <a class="dropdown-item" href="mineral/{{mine.slug}}">{{mine.title}}</a>
+                      </li>
+                        {% endfor %}
+                  </ul>
+              </div>
+              <p class="card-text">
+                Daily surface melt images from NASA data, and scientific analysis
+              </p>
+          </div>
+      </div>
+  </div>
+
+  <h2 class="h1 text-white text-center mt-5">
+      Indian Scientific Expedition Program
+  </h2>
+  <div
+      class="
+          cards
+          d-flex
+          align-items-center
+          justify-content-center
+          gap-3
+          flex-wrap
+          mt-4
+      "
+  >
+      <div class="card" style="width: 18rem">
+          <img
+              src="{% static 'images/Antarctic_Image.jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                    ANTARCTIC
+                  </button>
+                  <ul class="dropdown-menu">
+                      {% for research in redrg %}
+                      <li>
+                          <a class="dropdown-item" href="research_scientist_example/{{research.slug}}">{{research.title}}</a>
+                      </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="card" style="width: 18rem">
+          <img
+              src="{% static 'images/arctic_Image.jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                      ARCTIC
+                  </button>
+                  <ul class="dropdown-menu">
+                      {% for researchGrant in down_publ %}
+                      <li>
+                          <a class="dropdown-item" href="research_grants_example/{{researchGrant.slug}}">{{researchGrant.title}}</a>
+                      </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="card" style="width: 18rem">
+          <img
+              src="{% static 'images/SoE_Image.jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                      SOUTHERN OCEAN
+                  </button>
+                  <ul class="dropdown-menu">
+                      {% for scientificPublication in redsc %}
+                      <li>
+                          <a class="dropdown-item" href="research_publications_example/{{scientificPublication.slug}}">{{scientificPublication.title}}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="card" style="width: 18rem">
+          <img
+              src="{% static 'images/Him_image.jpg' %}"
+              class="card-img-top"
+              alt="..."
+          />
+          <div class="card-body">
+              <div class="dropdown">
+                  <button
+                      class="
+                          dropdown-toggle
+                          h5
+                          border-0
+                          bg-white
+                          ps-0
+                      "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                      HIMALAYA
+                  </button>
+                  <ul class="dropdown-menu">
+                    {% for informationResearch in him %}
+                      <li>
+                          <a class="dropdown-item" href="scientific_expeditions_example/{{informationResearch.slug}}">{{informationResearch.title}}</a>
+                      </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <p></p>
+</section>
+
+
+
+
+                {% endblock %}
